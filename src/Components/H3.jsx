@@ -11,52 +11,69 @@ const H1 = () => {
         <div>
           <h4 style={{ color: "red" }}> <TitleWithRectangle text="This Month" /></h4>
         </div>
-        <div style={{display:"flex",justifyContent:'space-between',marginBottom:'40px'}}>
+        <div className="flex justify-between mt-[40px]" >
           <h2>
             <b>Best Selling Products</b>
           </h2>
-          <button style={{backgroundColor:'#DB4444',width:'149px',height:'46px',borderRadius:"4px",padding:"10px 0",gap:'10px',textAlign:'center'}}>view All</button>
+          <button className="w-[149px] h-[46px] rounded-[4px] p-[10px 0] gap-[10px] text-center" >view All</button>
         </div>
       
 
-  <div className="card-container" style={{ display: "flex", gap: "20px", flexWrap: "wrap",minHeight:'auto' }}>
+  <div className="card-container flex gap-[20px] flex-wrap min-h-auto" >
     {F5im.map((item) => (
-      <div key={item.id} style={{ position: "relative", display: "flex", flexDirection: "column", width: "200px", padding: "10px", borderRadius: "8px", overflow: "hidden",height:'250px' }}>
+      <div key={item.id} className="relative flex flex-col  w-[200px] p-[10px] rounded-[8px] h-[250px] overflow-hidden" >
         
         {/* Image Container */}
-        <div style={{ position: "relative", overflow: 'hidden', height: '250px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5F5F5' }}>
+        <div className="relative overflow-hidden h-[250px] w-full flex justify-center items-center   bg-[#F5F5F5]" >
           <img 
             src={item.image} 
             alt={item.model} 
-            style={{ objectFit: "contain", height: '100%', width: '100%', mixBlendMode: "multiply" }} 
+            className="object-contain h-full w-full mix-blend-multiply"
+           
           />
 
           {/* Discount Tag */}
           {item.discount && (
-            <span style={{ position: "absolute", top: "5px", left: "5px", background: "red", color: "white", padding: "2px 6px", fontSize: "12px", borderRadius: "4px" }}>
+            <span className = ' absolute top-[5px] left-[5px] bg-[#FF0000] text-white px-[6px] py-[2px] text-[12px] rounded-[4px] '
+            >
               -{item.discount}%
             </span>
           )}
 
           {/* Icons */}
-          <div style={{ position: "absolute", right: "5px", top: "7px", display: "flex", flexDirection: "column", gap: "5px" }}>
-            <i className="fas fa-eye" style={{fontSize: "18px", cursor: "pointer", background: "white", padding: "4px", borderRadius: "50%" }}></i>
-            <i className="fas fa-heart" style={{  fontSize: "18px", cursor: "pointer", background: "white", padding: "4px", borderRadius: "50%" }}></i>
+          <div className = 'absolute right-[5px] top-[7px] flex flex-col gap-[5px]'>
+            <i className="fas fa-eye text-[18px]  cursor-pointer bg-white p-[4px] rounded-[50%] "></i>
+            <i className="fas fa-heart text-[18px]  cursor-pointer bg-white p-[4px] rounded-[50%]" ></i>
           </div>
         </div>
 
         {/* Product Details */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left", marginTop: "3px", backgroundColor: 'white',height:'' }}>
-          <p style={{ margin: "2px 0", fontSize: "16px", fontWeight: "bold",fontWeight:'500',lineHeight:'24px' }}>{item.company}</p>
-          <p style={{ margin: "2px 0", fontSize: "16px", color: "gray" }}>{item.model}</p>
-          <p style={{ margin: "2px 0", fontSize: "16px", color: "red",fontWeight:'500',lineHeight:'24px' }}>
+        <div 
+        className="flex flex-col items-start text-left mt-[3px] bg-white" >
+        
+        
+        
+      
+          <p className='mt-[2px] mb-0 text-[16px] font-bold leadin-[24px]  '
+          
+          
+          
+          style={{ margin: "2px 0", fontSize: "16px", fontWeight: "bold",fontWeight:'500',lineHeight:'24px' }}>{item.company}</p>
+          <p className ='mt-[2px] mb-0 text-[16px] text-[#808080] '>{item.model}</p>
+          <p className = 'mt-[2px] mb-0 text-[16px] text-[red] font-[500] leading-[24px]'
+          >
 ${item.price} 
-<span className="original-price" style={{ textDecoration: "line-through", color: "gray", marginLeft: "5px",fontWeight:'500',fontSize:'16px',lineHeight:'24px' }}>
+<span className="original-price line-through text-[gray] ml-[5px] font-[500px] text-[16px] leading-[24px] " >
   ${item.originalPrice || 400}
 </span>
 </p>
 
-          <span style={{ color: "gold", fontSize: "18px", marginTop: "2px" }}>★★★★★ <span style={{fontFamily: 'sans-serif',color:'black',fontSize:'small'}}>(99)</span></span>
+          <span  
+          className="text-[gold] text-[18px] mt-[2px] "
+
+         >★★★★★ <span 
+         className="font-serif text-black text-sm"
+         >(99)</span></span>
         </div>
 
       </div>

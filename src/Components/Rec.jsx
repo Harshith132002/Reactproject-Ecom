@@ -2,19 +2,19 @@ import React from "react";
 
 const TitleWithRectangle = ({ text = "Today's" }) => {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+    <div 
+    className="flex items-center gap-[6px]"
+   >
       {/* Red Rounded Rectangle */}
       <div
-        style={{
-          width: "14px",
-          height: "28px",
-          backgroundColor: "#E74C3C",
-          borderRadius: "6px",
-        }}
+      className="w-[14px] h-[28px] bg-[#E74C3C] rounded-[6px]"
+       
       ></div>
 
       {/* Dynamic Text */}
-      <span style={{ fontWeight: "bold", color: "#E74C3C", fontSize: "18px" }}>
+      <span 
+      className="font-bold text-[#E74C3C] text-[18px]"
+     >
         {text}
       </span>
     </div>

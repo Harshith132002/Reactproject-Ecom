@@ -6,13 +6,17 @@ const H1 = () => {
   
 const F5im = mobileData.slice(0,5)
   return (
-    <div style={{display:'flex'}}>
+    <div
+    className='flex'
+    >
     {
     
     F5im.map((item)=>(<div key={item.id}>
     
     <div>
-      <img src={item.image} style={{width:'100px',height:'100px'}} alt="" />
+      <img src={item.image} 
+      className='w-[100px] h-[100px] '
+       alt="" />
     </div>
     <div>
       <h6>{item.company}</h6><h6>{item.model}</h6>

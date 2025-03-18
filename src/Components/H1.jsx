@@ -12,7 +12,7 @@ const H1 = () => {
    <>
    
    
-      <div className="card-container" style={{marginTop:' 500px',}}>
+      <div className="card-container mt-[500px]" >
       {F5im.map((item) => (
         <div className="product-card" key={item.id}>
           {item.discount && <div className="discount-badge">-{item.discount}%</div>}
@@ -31,7 +31,7 @@ const H1 = () => {
             <div className="star-rating">⭐⭐⭐⭐⭐</div>
           </div>
           <div>
-            <button style={{width:'100%',backgroundColor:'black',color:'white'}} onClick={()=>addToCart(item)}>Add to cart</button>
+            <button className="w-full bg-black text-white"  onClick={()=>addToCart(item)}>Add to cart</button>
           
           
           </div>
@@ -40,8 +40,8 @@ const H1 = () => {
         
       ))}
     </div>
-    <div style={{position:'absolute',left:'500px',marginTop:'30px'}}>
-    <button style={{width:"280px", height:'40px',backgroundColor:'red'}}>View All Products</button>
+    <div className='absolute left-[500px] mt-[30px] '>
+    <button className="w-[280px] h-[40px] " style={{backgroundColor:'red'}}>View All Products</button>
     </div>
     
     </>

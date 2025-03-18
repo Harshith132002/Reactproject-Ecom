@@ -24,32 +24,27 @@ const ProCard = () => {
   const displayedItems = mobileData.slice(startIndex, startIndex + itemsToShow);
 
   return (
-    <div>
+    <div >
       <div className="Browse">
         <div>
-          <h4 style={{ color: "red" }}>
+          <h4 
+          className="text-red-600 ">
             <TitleWithRectangle text="Today's" />
           </h4>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <div style={{ marginBottom: "20px" }}>
+        <div className="flex justify-around"
+        >
+          <div className="mb-[20px]">
             <CountDown />
           </div>
 
-          <div style={{ display: "flex",gap:'10px' }}>
+          <div className="flex gap-[10px]"
+          >
           <div>
             <button
-                style={{
-                  borderRadius: "50%", // Make it circular
-                  height: "40px",
-                  width: "40px", // Ensure width equals height for a perfect circle
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: '#F5F5F5',
-                  color:'black',
-                  border:'none'
-                }}
+ className="rounded-[50%] h-[40px] w-[40px] flex justify-center items-center bg-[#f5f5f5] 
+ text-black border-none "         
+          
                 onClick={handleNext}
                 disabled={startIndex + itemsToShow >= mobileData.length}
               >
@@ -58,17 +53,8 @@ const ProCard = () => {
             </div>
             <div>
               <button
-                style={{
-                  borderRadius: "50%", // Make it circular
-                  height: "40px",
-                  width: "40px", // Ensure width equals height for a perfect circle
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: '#F5F5F5',
-                  color:'black',
-                  border:'none'
-                }}
+  className="rounded-[50%] h-[40px] w-[40px] flex justify-center items-center bg-[#f5f5f5] text-black border-none"            
+               
                 onClick={handlePrev}
                 disabled={startIndex === 0}
               >
@@ -79,64 +65,31 @@ const ProCard = () => {
           </div>
         </div>
         <div
-          className="card-container"
-          style={{
-            display: "flex",
-            gap: "20px",
-            minHeight: "auto",
-          }}
+          className="card-container flex gap=[20px] min-h-auto"
+          
         >
           {displayedItems.map((item) => (
             <div
               key={item.id}
-              style={{
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                width: "200px",
-                padding: "10px",
-                borderRadius: "8px",
-                overflow: "hidden",
-                height: "250px",
-              }}
+className="relative flex flex-col w-[200px] p-[10px] rounded-[8px] overflow-hidden h-[350px]"              
+             
             >
               {/* Image Container */}
-              <div
-                style={{
-                  position: "relative",
-                  overflow: "hidden",
-                  height: "250px",
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#F5F5F5",
-                }}
+<div
+ className="relative overflow-hidden h-[350px] w-full flex justify-center items-center bg-[#F5F5F5] "              
+               
               >
                 <img
                   src={item.image}
                   alt={item.model}
-                  style={{
-                    objectFit: "contain",
-                    height: "100%",
-                    width: "100%",
-                    mixBlendMode: "multiply",
-                  }}
+                 className="object-contain h-full w-full mix-blend-multiply"
+                
                 />
 
                 {/* Discount Tag */}
                 {item.discount && (
                   <span
-                    style={{
-                      position: "absolute",
-                      top: "5px",
-                      left: "5px",
-                      background: "red",
-                      color: "white",
-                      padding: "2px 6px",
-                      fontSize: "12px",
-                      borderRadius: "4px",
-                    }}
+className="absolute top-[5px] left-[5px] bg-red-500 text-white py-[2px] px-[6px] text-[12px] rounded-[4px]"
                   >
                     -{item.discount}%
                   </span>
@@ -144,34 +97,16 @@ const ProCard = () => {
 
                 {/* Icons */}
                 <div
-                  style={{
-                    position: "absolute",
-                    right: "5px",
-                    top: "7px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "5px",
-                  }}
+ className="absolute right-[5px] top-[7px] flex flex-col gap-[5px]"               
+                
                 >
                   <i
-                    className="fas fa-eye"
-                    style={{
-                      fontSize: "18px",
-                      cursor: "pointer",
-                      background: "white",
-                      padding: "4px",
-                      borderRadius: "50%",
-                    }}
+                    className="fas fa-eye text-[18px] cursor-pointer bg-white p-[4px] rounded-[50%]"
+                  
                   ></i>
                   <i
-                    className="fas fa-heart"
-                    style={{
-                      fontSize: "18px",
-                      cursor: "pointer",
-                      background: "white",
-                      padding: "4px",
-                      borderRadius: "50%",
-                    }}
+                    className="fas fa-heart text-[18px] cursor-pointer bg-white p-[4px] rounded-[50%]"
+                   
                   ></i>
                 </div>
               </div>
@@ -180,57 +115,38 @@ const ProCard = () => {
                
               {/* Product Details */}
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  textAlign: "left",
-                  marginTop: "3px",
-                  backgroundColor: "white",
-                  height: "",
-                }}
+className="flex flex-col items-start mt-[3px] bg-white"              
+               
               >
                 <p
-                  style={{
-                    margin: "2px 0",
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    fontWeight: "500",
-                    lineHeight: "24px",
-                  }}
+   className="my-[2px] mx-0 text-[16px] font-semibold leading-[24px]"              
+                 
                 >
                   {item.company}
                 </p>
-                <p style={{ margin: "2px 0", fontSize: "16px", color: "gray" }}>
+                <p 
+className="my-[2px] mx-0 text-[16px] text-gray-300"                
+>
                   {item.model}
                 </p>
                 <p
-                  style={{
-                    margin: "2px 0",
-                    fontSize: "16px",
-                    color: "red",
-                    fontWeight: "500",
-                    lineHeight: "24px",
-                  }}
+className="my-[2px] mx-0 text-[16px] font-semibold leading-[24px] text-red-600"                  
+                 
                 >
                   ${item.price}
                   <span
-                    className="original-price"
-                    style={{
-                      textDecoration: "line-through",
-                      color: "gray",
-                      marginLeft: "5px",
-                      fontWeight: "500",
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                    }}
+                    className="original-price line-through text-gray-400 ml-[5px] font-bold text-[16px] leading-[24px]                             "
+               
                   >
                     ${item.originalPrice || 400}
                   </span>
                 </p>
 
-                <span style={{ color: "gold", fontSize: "18px", marginTop: "2px" }}>
-                  ★★★★★ <span style={{ fontFamily: "sans-serif", color: "black", fontSize: "small" }}>(99)</span>
+                <span 
+  className="text-#FFD700 text-[18px] mt-[2px]">
+                  ★★★★★ <span 
+className="font-sans text-black text-sm "
+>(99)</span>
                 </span>
               </div>
             </div>

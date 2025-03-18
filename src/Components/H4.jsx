@@ -6,18 +6,20 @@ import { mobileData } from "../Stores/data/mobiles";
 const H4 = () => {
   const F5im = speakerData.slice(0, 10);
 
-   const[showAll,setShowAll] = useState(false)
-   const displayItems = showAll? speakerData : F5im;
+  const [showAll, setShowAll] = useState(false);
+  const displayItems = showAll ? speakerData : F5im;
 
-
-   const toggleShowall=()=>{
+  const toggleShowall = () => {
     setShowAll(!showAll);
-   }
+  };
   return (
     <>
       <div className="Browse">
         <div>
-          <h4 style={{ color: "red" }}> <TitleWithRectangle text ="Our Products" /></h4>
+          <h4 className="text-[red]">
+            {" "}
+            <TitleWithRectangle text="Our Products" />
+          </h4>
         </div>
         <div>
           <h2>
@@ -26,59 +28,111 @@ const H4 = () => {
         </div>
 
         <div>
-        <div className="card-container" style={{ display: "flex", gap: "20px", flexWrap: "wrap",minHeight:'auto' }}>
-    {displayItems.map((item) => (
-      <div key={item.id} style={{ position: "relative", display: "flex", flexDirection: "column", width: "200px", padding: "10px", borderRadius: "8px", overflow: "hidden",height:'250px' }}>
+          <div className="card-container flex gap-[20px] flex-wrap min-h-auto">
+            {displayItems.map((item) => (
+              <div
+                key={item.id}
+                className="relative flex flex-col w-[200px] p-[10px] rounded-[8px] overflow-hidden h-[250px]"
+              >
+                {/* Image Container */}
+                <div className="relative overflow-hidden h-[250px] w-full flex justify-center items-center bg-[#F5F5F5] ">
+                  <img
+                    src={item.image}
+                    alt={item.model}
+                    className="object-contain h-full w-full mix-blend-multiply"
+                  />
+
+                  {/* Discount Tag */}
+                  {item.discount && (
+                    <span
+                     className="absolute top-[5px] left-[5px] bg-[#FF0000] px-[6px] py-[2px] text-[12px] rounded-[4px] text-white"
+                    >
+                      -{item.discount}%
+                    </span>
+                  )}
+
+                  {/* Icons */}
+                  <div
+  className="absolute right-[5px] top-[7px] flex flex-col gap-[5px] "
+                    
         
-        {/* Image Container */}
-        <div style={{ position: "relative", overflow: 'hidden', height: '250px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5F5F5' }}>
-          <img 
-            src={item.image} 
-            alt={item.model} 
-            style={{ objectFit: "contain", height: '100%', width: '100%', mixBlendMode: "multiply" }} 
-          />
+                  >
+                    <i
+                      className="fas fa-eye 
+                      text-[18px] cursor-pointer bg-white
+                      p-[4px] rounded-[50%]"
+                   
+                    ></i>
+                    <i
+                      className="fas fa-heart text-[18px] cursor-pointer bg-white
+                      p-[4px] rounded-[50%]"
+                     
+                    ></i>
+                  </div>
+                </div>
 
-          {/* Discount Tag */}
-          {item.discount && (
-            <span style={{ position: "absolute", top: "5px", left: "5px", background: "red", color: "white", padding: "2px 6px", fontSize: "12px", borderRadius: "4px" }}>
-              -{item.discount}%
-            </span>
-          )}
+                {/* Product Details */}
+                <div
+                  className="flex flex-col items-start mt-[3px] bg-white  "
+                  
+                  
+                 
+                >
+                  <p
+                  className="my-[2px] mt-0 text-[16px] font-bold leading-[24px]"
+               >
+                    {item.company}
+                  </p>
+                  <p
+                    className="my-[2px] mx-0 text-[16px] text-[#808080]" 
+                    
+                    
+                  >
+                    {item.model}
+                  </p>
+                  <p
+                   className="my-[2px] mt-0 text-[16px] font-bold leading-[24px] text-[#FF0000]"
+                 
+                  >
+                    ${item.price}
+                    <span
+                      className="original-price line-through text-[#808080] ml-[5px] font-bold text-16px leading-[24px]"
+                     
+                    >
+                      ${item.originalPrice || 400}
+                    </span>
+                  </p>
 
-          {/* Icons */}
-          <div style={{ position: "absolute", right: "5px", top: "7px", display: "flex", flexDirection: "column", gap: "5px" }}>
-            <i className="fas fa-eye" style={{fontSize: "18px", cursor: "pointer", background: "white", padding: "4px", borderRadius: "50%" }}></i>
-            <i className="fas fa-heart" style={{  fontSize: "18px", cursor: "pointer", background: "white", padding: "4px", borderRadius: "50%" }}></i>
-          </div>
-        </div>
-
-        {/* Product Details */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left", marginTop: "3px", backgroundColor: 'white',height:'' }}>
-          <p style={{ margin: "2px 0", fontSize: "16px", fontWeight: "bold",fontWeight:'500',lineHeight:'24px' }}>{item.company}</p>
-          <p style={{ margin: "2px 0", fontSize: "16px", color: "gray" }}>{item.model}</p>
-          <p style={{ margin: "2px 0", fontSize: "16px", color: "red",fontWeight:'500',lineHeight:'24px' }}>
-${item.price} 
-<span className="original-price" style={{ textDecoration: "line-through", color: "gray", marginLeft: "5px",fontWeight:'500',fontSize:'16px',lineHeight:'24px' }}>
-  ${item.originalPrice || 400}
-</span>
-</p>
-
-          <span style={{ color: "gold", fontSize: "18px", marginTop: "2px" }}>★★★★★ <span style={{fontFamily: 'sans-serif',color:'black',fontSize:'small'}}>(99)</span></span>
-        </div>
-
-      </div>
-
-        
+                  <span
+                  className="text-[#FFD700],text-[18px] mt-[2px]"
+                  >
+                    ★★★★★{" "}
+                    <span
+                    className="font-sans text-black text-sm "
+                     
+                    >
+                      (99)
+                    </span>
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </div>
-      <div style={{position:'absolute',left:'500px',marginTop:'30px'}}>
-      <button style={{backgroundColor:'#DB4444',width:'149px',height:'46px',borderRadius:"4px",padding:"10px 0",gap:'10px',textAlign:'center'}} onClick={toggleShowall}>{showAll ? "Show Less" : "View All Products"}</button>
-    </div>
+      <div 
+ className="aboslute left-[500px] mt-[30px]"     
+>
+        <button
+className="bg-[#DB4444] w-[149px] h-[46px] rounded-[4px] py-[10px] px-0 gap-[10px] text-center"
+
+          onClick={toggleShowall}
+        >
+          {showAll ? "Show Less" : "View All Products"}
+        </button>
+      </div>
     </>
   );
 };
 
 export default H4;
-

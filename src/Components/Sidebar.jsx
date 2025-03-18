@@ -3,17 +3,9 @@ import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 
 const Sidebar = () => {
   return (
-    <div
-      style={{
-        width: "250px",
-        
-        position:"absolute",
-        top: "94px",
-        left: 0,
-        backgroundColor: "#f8f9fa",
-        padding: "20px",
-        boxShadow: "2px 0 5px rgba(0,0,0,0.1)",
-      }}
+    <div className="w-[250px] absolute top-[94px] left-0 bg-#f8f9fa p-[20px] 
+    shadow-[2px_0_5px_rgba(0,0,0,0.1)]  "
+      
     >
       
       <Nav className="flex-column">

@@ -24,7 +24,8 @@ const Round = () => {
     </div>
 
 
-    <div className= 'flex flex-col items-center gap-[20px]' >
+     <div className= 'flex flex-col items-center gap-[20px]' > 
+   
       <div className='rounded-[100%]  h-[90px] w-[90px] flex justify-center align-items-center' style={{backgroundColor:'grey'}} >
         <div  className='rounded-[100%] h-[60px] w-[60px] flex justify-center items-center bg-black' >
           <div className='bg-black h-[40px] w-[80px] rounded-[100%]'>

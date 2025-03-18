@@ -8,7 +8,7 @@ const H2 = () => {
         <h4 style={{color:'red'}}> <TitleWithRectangle text='Categories' /> </h4>
       </div>
       <div>
-        <h2 style={{fontWeight:'600px',lineHeight:'48px',letterSpacing:'4%'}}><b>Browse By Category</b></h2>
+        <h2 className='font-semibold text-[48px] tracking-[4%]' ><b>Browse By Category</b></h2>
       </div>
      
    <div className='box-i'>

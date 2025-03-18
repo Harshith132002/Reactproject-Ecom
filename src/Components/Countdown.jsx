@@ -2,12 +2,12 @@ import React from 'react';
 
 const CountDown = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+    <div className='flex justify-evenly gap-[100px]' >
       <div>
-        <h3 style={{ fontWeight:'600px' }}>Flash Sales</h3>
+        <h3 className='font-[600px]' >Flash Sales</h3>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: '20px' }}>
-        <div style={{ textAlign: 'center' }}>
+      <div className='flex justify-around items-center gap-[20px]' >
+        <div className='text-center' >
           Days
           <br />
           03

@@ -3,45 +3,57 @@ import TitleWithRectangle from './Rec'; // Assuming Rec.js is in the same direct
 
 const Add1 = () => {
   return (
-    <div style={{ marginTop: '100px' }}>
+    <div className='mt-[100px]'>
       <div className="Browse">
         <h4>
           <TitleWithRectangle text="Featured" /> {/* Correct usage */}
         </h4>
         <div>
-          <h2 style={{ fontWeight: '600', lineHeight: '48px', letterSpacing: '4%' }}>
+          <h2 
+className='font-semibold leading-[48px] tracking-[4%]'          
+>
             <b>New Arrival</b>
           </h2>
         </div>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <div style={{ height: '300px', width: '300px' }}>
+        <div className='flex gap-[8px]' >
+          <div className='h-[300px] w-[300px]' >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4troEouUL17A9x2LqfASJAFESUxQ3AktWnQ&s"
               alt="Image Description"
-              style={{ width: '100%', height: '300px', objectFit: 'cover' }}
+className='w-[100%] h-[300px] object-cover '
+
             />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-            <div style={{ height: '150px', width: '400px', backgroundColor: 'blue' }}>
+          <div className='flex flex-col gap-[5px]' >
+            <div
+            className='h-[150px] w-[400px] bg-[#0000FF]'
+          >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4troEouUL17A9x2LqfASJAFESUxQ3AktWnQ&s"
                 alt="Image Description"
-                style={{ width: '100%', height: '150px', objectFit: 'cover' }}
+               className='w-full h-[150px] object-cover'
+                
               />
             </div>
-            <div style={{ display: 'flex', gap: '5px' }}>
-              <div style={{ height: '150px', width: '200px', backgroundColor: 'yellow' }}>
+            <div className='flex gap-[5px]'>
+              <div
+              className='h-[150px] w-[200px] bg-yellow-300 '
+             >
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4troEouUL17A9x2LqfASJAFESUxQ3AktWnQ&s"
                   alt="Image Description"
-                  style={{ width: '100%', height: '150px', objectFit: 'cover' }}
+className='w-full h-[150px] object-cover '
+
                 />
               </div>
-              <div style={{ height: '150px', width: '200px', backgroundColor: 'green' }}>
+              <div
+  className='h-[150px] w-[200px] bg-green-600'           
+  >
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4troEouUL17A9x2LqfASJAFESUxQ3AktWnQ&s"
                   alt="Image Description"
-                  style={{ width: '100%', height: '150px', objectFit: 'cover' }}
+                  className='w-full h-[150px] object-cover '
+                 
                 />
               </div>
             </div>

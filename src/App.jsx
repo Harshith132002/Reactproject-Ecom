@@ -22,7 +22,7 @@ import Round from './Components/Round'
 import CountDown from './Components/CountDown'
 import Add1 from './Components/Add1'
 import Pr1 from './Components/Pr1'
-
+import  './index.css'
 
 
 

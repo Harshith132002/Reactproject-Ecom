@@ -6,9 +6,10 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Navbar1() {
   return (
-    <Navbar className="bg-body-tertiary" style={{ borderBottom: "2px solid black", paddingBottom: "25px", marginTop: '30px', width: "100%" }}>
+    <Navbar className="bg-body-tertiary border-b-[2px] border-black border-solid pb-[25px] mt-[30px] w-full" 
+>
       <div className="navbar-container">
-        <Navbar.Brand href="#" style={{ fontWeight: "bolder" }}>Exclusive</Navbar.Brand>
+        <Navbar.Brand href="#" className ='font-extrabold'>Exclusive</Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -19,7 +20,7 @@ function Navbar1() {
             <Nav.Link href="/About">About</Nav.Link>
             <Nav.Link href="Signup">Sign up</Nav.Link>
           </Nav>
-          <Form className="d-flex" style={{padding:'0.5rem',boxSizing:'border-box'}}>
+          <Form className="d-flex p-0.5 box-border" >
             <Form.Control
               type="search"
               placeholder="What are you looking for?"
@@ -27,7 +28,7 @@ function Navbar1() {
               aria-label="Search"
             />
           </Form>
-          <div style={{display:'flex',gap:"10px"}}>
+          <div className='flex gap-[10px]' >
           <a href="#"><button className='ibtn'><i className="fa fa-heart" aria-hidden="true"></i></button></a>
           <NavLink href='Cart'><button className='ibtn'><i class="fas fa-shopping-cart"></i><sup>{3}</sup></button></NavLink>
           </div>
